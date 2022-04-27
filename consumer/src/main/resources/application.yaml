@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-cloud-eureka-client
+  cloud:
+    stream:
+      bindings:
+        onReceive-in-0:
+          destination: uppercase-values-topic
+          group: consumer
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: true
